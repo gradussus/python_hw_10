@@ -29,13 +29,12 @@ def phone_handler(name):
     return phonebook[name]
 
 def show_all_handler():
+    if not address_book:
+        return "No contacts found"
+    contacts = []
+    for name, phone in address_book.data:
+        contacts.append(f"{name}: {phone}")
     return (address_book)
-    # if not phonebook:
-    #     return "No contacts found"
-    # contacts = []
-    # for name, phone in phonebook.items():
-    #     contacts.append(f"{name}: {phone}")
-    # return '\n'.join(contacts)
 
 
 def main():
